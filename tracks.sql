@@ -15,16 +15,16 @@ create table student13.tracks
 create table student13.song_genres
 	(
 	id int2 primary key,
-	genre_name text unique
+	genre_name text unique not null
 	);
 	
 create table student13.albums
 	(
 	id int4 primary key,
-	singer_id int4 references singers(id) ,
-	track_id int4 references tracks(id),
+	singer_id int4 references singers(id) not null,
+	track_id int4 references tracks(id) not null,
 	year int2,
-	genre_id int2 references song_genres(id)
+	genre_id int2 references song_genres(id) not null
 	);
 
 
