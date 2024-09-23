@@ -26,5 +26,6 @@ create table student13.tracks
 	album_id int4 references albums(id) not null,
 	track_name text not null,
 	duration time,
-	genre_id int2 references song_genres(id) not null
+	genre_id int2 references song_genres(id) not null,
+	unique (album_id, track_name)
 	);
