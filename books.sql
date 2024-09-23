@@ -17,5 +17,6 @@ create table student13.books
 	writer_id int4 references book_writers(id) not null,
 	book_name text not null,
 	published int2,
-	genre_id int2 references book_genres(id) not null
+	genre_id int2 references book_genres(id) not null,
+	unique (writer_id, book_name)
 	);

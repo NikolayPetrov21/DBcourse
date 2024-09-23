@@ -15,7 +15,9 @@ create table student13.albums
 	(
 	id int4 primary key,
 	singer_id int4 references singers(id) not null,
-	year int2
+	album_name text,
+	year int2,
+	unique (singer_id, album_name)
 	);
 
 create table student13.tracks
@@ -26,4 +28,3 @@ create table student13.tracks
 	duration time,
 	genre_id int2 references song_genres(id) not null
 	);
-
